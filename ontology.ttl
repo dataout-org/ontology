@@ -1,0 +1,387 @@
+@prefix : <https://dataout.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wikidata: <https://www.wikidata.org/wiki/> .
+
+# Ontology
+
+: a owl:Ontology ;
+    rdfs:label "Dataout Ontology"@en ;
+    dcterms:creator <https://dataout.org/> ;
+    dcterms:description "This ontology is intended to represent data on SOGIESC-based crimes and discrimination, as well as processes associated with the collection of such data."@en ;
+    vann:preferredNamespacePrefix "dataout"@en ;
+    vann:preferredNamespaceUri <https://dataout.org/ontology#> ;
+    schema:image <https://github.com/dataout-org/ontology/blob/main/ontology_scheme.png?raw=true> ;
+    dcterms:created "2026-06-12"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:versionInfo "1.0.0"@en.
+
+<https://dataout.org/> a prov:Organization, schema:NGO ;
+    schema:name "Dataout Foundation"@en ;
+    schema:legalName "Dataout Foundation"@en, "Stichting Dataout"@nl ;
+    schema:alternateName "Dataout"@en ;
+    schema:description "Dataout is a nonprofit dedicated to uncovering discrimination and crimes based on SOGIESC – sexual orientation, gender identity & expression, and sex characteristics. By conducting research and releasing open data, we aim to empower journalists, researchers, human rights advocates, and policymakers in creating a better social and legal environment for LGBTQIA+ people and others affected by SOGIESC-based discrimination. We focus on the regions where these issues are severe and least visible."@en ;
+    schema:url <https://dataout.org/> ;
+    schema:email <mailto:contact@dataout.org> ;
+    schema:address "The Hague, the Netherlands"@en .
+
+# Classes
+
+## Monitoring activities
+
+:MonitoringActivity a rdfs:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "Monitoring activity"@en ;
+    dcterms:description "Class representing a single monitoring activity. Dataout conducts monitorings of different categories, such as hate crimes, discrimination, administrative and criminal persecution. The categories of monitoring are defined by the MonitoringCategoryScheme"@en .
+
+:MonitoringRecord a rdfs:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Monitoring record"@en ;
+    dcterms:description "A single record resulting from a monitoring activity. For example, if a monitoring activity documents hate crime incidents, an entity representing a hate crime would be a monitoring record."@en .
+
+## Judicial
+
+:Penalty a rdfs:Class ;
+    rdfs:label "Penalty"@en ;
+    dcterms:description "Penalty imposed by an official body, such as a court."@en .
+
+:Court a rdfs:Class ;
+    rdfs:subClassOf schema:Organization ;
+    rdfs:label "Court"@en ;
+    dcterms:description "Class representing a court of any level"@en .
+
+:Defendant a rdfs:Class ;
+    rdfs:label "Defendant"@en ;
+    dcterms:description "A legal or natural person with a role of a defendant in a legal process."@en .
+
+## Sources
+
+:Source a rdfs:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Source"@en ;
+    dcterms:description "A source of a monitoring record indicating provenance information."@en .
+
+## Object that triggered proceedings
+
+:TriggerObject a rdfs:Class ;
+    rdfs:label "Trigger object"@en ;
+    dcterms:description "A trigger object is an information object or public action that was used by the authorities as a reason to initiate an administrative or criminal proceeding. For example, in our monitoring of administrative persecution targeting LGBTQIA+ expression in Russia, a trigger object could be a mass media publication, which the Russian mass media regulator (Roskomnadzor) found to be violating, which resulted in a court case against a media company dissimianting such publication."@en .
+
+# Properties
+
+## monitoring Category
+
+:monitoringCategory a owl:ObjectProperty ;
+    rdfs:domain :MonitoringActivity ;
+    rdfs:range skos:Concept ;
+    rdfs:label "Category of monitoring"@en ;
+    dcterms:description "Connects a monitoring activity to its category."@en .
+
+## monitoring record metadata
+
+:monitoringRecordNumber a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:domain :MonitoringRecord ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "Monitoring record number"@en ;
+    dcterms:description "A unique identifier assigned to a monitoring record within the Dataout monitoring system."@en .
+
+## judicial
+
+:courtCode a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:domain :Court ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "court code"@en ;
+    dcterms:description "An identifier code assigned to a court by a judicial or administrative authority."@en .
+
+:concernsLegalArticle a owl:ObjectProperty ;
+    rdfs:domain :MonitoringRecord ;
+    rdfs:range schema:Legislation ;
+    rdfs:label "concerns legal article"@en ;
+    dcterms:description "Connect a monitoring record to a legal article. Useful when monitoring state persecution."@en .
+
+:hasDefendant a owl:ObjectProperty ;
+    rdfs:domain :MonitoringRecord ;
+    rdfs:range :Defendant ;
+    rdfs:label "has defendant"@en ;
+    dcterms:description "A natural person or legal entity, which is referred to as a defendant in a source documents (for example, a court decision or a mass media publication)"@en .
+
+:defendantCategory a owl:ObjectProperty ;
+    rdfs:domain :Defendant ;
+    rdfs:range skos:Concept ;
+    rdfs:label "defendant category"@en ;
+    dcterms:description "Connects a defendant to its category."@en .
+
+:hasTriggerObject a owl:ObjectProperty ;
+    rdfs:domain :MonitoringRecord ;
+    rdfs:range :TriggerObject ;
+    rdfs:label "has trigger object"@en ;
+    dcterms:description "Connects a trigger object to a monitoring record, in which it was mentioned."@en .
+
+:triggerObjectCategory a owl:ObjectProperty ;
+    rdfs:domain :TriggerObject ;
+    rdfs:range skos:Concept ;
+    rdfs:label "trigger object category"@en ;
+    dcterms:description "Categories of trigger objects describe what such object is (for example, a film, a social media post, a protest), but not its legal interpretation by authorities."@en .
+
+:hasPenalty a owl:ObjectProperty ;
+    rdfs:domain :MonitoringRecord ;
+    rdfs:range :Penalty ;
+    rdfs:label "has penalty"@en ;
+    dcterms:description "Connects a penalty imposed on a defendant by an official body (a court) to a monitoring record, in which it was mentioned."@en .
+
+:penaltyCategory a owl:ObjectProperty ;
+    rdfs:domain :Penalty ;
+    rdfs:range skos:Concept ;
+    rdfs:label "penalty category"@en ;
+    dcterms:description "Connects a penalty to its category."@en .
+
+:penaltyValue a owl:ObjectProperty ;
+    rdfs:domain :Penalty ;
+    rdfs:range schema:StructuredValue ;
+    rdfs:label "penalty value"@en ;
+    dcterms:description "Connects a penalty to its value. The value of this property can be a triple, which indicates its quantitative unit (such as a monetary amount or days) and amount. For example, a penalty value could be a quantitative unit of 10 days if the penalty category is detention."@en .
+
+## other monitoring record content
+
+:monitoredIncidentYear a owl:DatatypeProperty ;
+    rdfs:domain :MonitoringRecord ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "monitored incident year"@en ;
+    dcterms:description "We categorise monitored incidents by year, during which they occured. This property represents years of incidents."@en .
+
+:hasSnippet a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:description ;
+    rdfs:domain :MonitoringRecord ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "has snippet"@en ;
+    dcterms:description "Connects a monitoring record to its textual summary (a snippet)."@en .
+
+:mentionedIn a owl:ObjectProperty ;
+    rdfs:domain :MonitoringRecord ;
+    rdfs:range :Source ;
+    rdfs:label "mentioned in"@en ;
+    dcterms:description "Used to connect a monitoring record to a source that mentions some information about a monitoring record."@en .
+
+## sources
+
+:sourceCategory a owl:ObjectProperty ;
+    rdfs:domain :Source ;
+    rdfs:range skos:Concept ;
+    rdfs:label "source category"@en ;
+    dcterms:description "Connects a source to its category."@en .
+
+:courtDocumentNumber a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:domain :Source ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "court document number"@en ;
+    dcterms:description "Used to indicate a number of a court document assigned by court. It is not necessarily a unique identifier. To indicate unique identifiers, use uniqueCourtDocumentID."@en .
+
+:uniqueCourtDocumentID a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:domain :Source ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "unique court document ID"@en ;
+    dcterms:description "Unique court document ID assigned by court."@en .
+
+:courtDocumentDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:date ;
+    rdfs:domain :Source ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "court document date"@en ;
+    dcterms:description "Indicates a date stated on a court document."@en .
+
+# Concept Schemes
+
+## Monitoring Categories
+
+:MonitoringCategoryScheme a skos:ConceptScheme ;
+    skos:prefLabel "Monitoring Categories"@en .
+
+:administrativePersecution a skos:Concept ;
+    skos:inScheme :MonitoringCategoryScheme ;
+    skos:prefLabel "Administrative persecution"@en .
+
+:criminalPersecution a skos:Concept ;
+    skos:inScheme :MonitoringCategoryScheme ;
+    skos:prefLabel "Criminal persecution"@en ;
+    skos:closeMatch wikidata:Q80111632 .
+
+:hateCrimes a skos:Concept ;
+    skos:inScheme :MonitoringCategoryScheme ;
+    skos:prefLabel "Hate crimes"@en ;
+    skos:closeMatch wikidata:Q459409 .
+
+## Legislation
+
+:LegislationCategoryScheme a skos:ConceptScheme ;
+    skos:prefLabel "Legislation Categories"@en .
+
+:constitution a skos:Concept ;
+    skos:inScheme :LegislationCategoryScheme ;
+    skos:prefLabel "Constitution"@en .
+
+:federalLaw a skos:Concept ;
+    skos:inScheme :LegislationCategoryScheme ;
+    skos:prefLabel "Federal law"@en .
+
+:administrativeCode a skos:Concept ;
+    skos:inScheme :LegislationCategoryScheme ;
+    skos:prefLabel "Administrative Code"@en .
+
+:criminalCode a skos:Concept ;
+    skos:inScheme :LegislationCategoryScheme ;
+    skos:prefLabel "Criminal Code"@en .
+
+## Penalty
+
+:PenaltyCategoryScheme a skos:ConceptScheme ;
+    skos:prefLabel "Penalty Categories"@en .
+
+:warning a skos:Concept ;
+    skos:inScheme :PenaltyCategoryScheme ;
+    skos:prefLabel "Warning"@en .
+
+:fine a skos:Concept ;
+    skos:inScheme :PenaltyCategoryScheme ;
+    skos:prefLabel "Fine"@en .
+
+:detention a skos:Concept ;
+    skos:inScheme :PenaltyCategoryScheme ;
+    skos:prefLabel "Detention"@en .
+
+:expulsion a skos:Concept ;
+    skos:inScheme :PenaltyCategoryScheme ;
+    skos:prefLabel "Expulsion"@en .
+
+## Defendant
+
+:DefendantCategoryScheme a skos:ConceptScheme ;
+    skos:prefLabel "Defendant Categories"@en .
+
+:legalEntity a skos:Concept ;
+    skos:inScheme :DefendantCategoryScheme ;
+    skos:prefLabel "Legal entity"@en ;
+    skos:relatedMatch schema:Organization, wikidata:Q3778211 .
+
+:official a skos:Concept ;
+    skos:inScheme :DefendantCategoryScheme ;
+    skos:prefLabel "Official"@en ;
+    skos:closeMatch wikidata:Q599151 ;
+    skos:note "used in a legal context."@en .
+
+:individual a skos:Concept ;
+    skos:inScheme :DefendantCategoryScheme ;
+    skos:prefLabel "Individual"@en ;
+    skos:closeMatch schema:Person, wikidata:Q795052 .
+
+## Sources
+
+:SourceCategoryScheme a skos:ConceptScheme ;
+    skos:prefLabel "Source categories"@en .
+
+:courtDocument a skos:Concept ;
+    skos:inScheme :SourceCategoryScheme ;
+    skos:prefLabel "Court document"@en ;
+    skos:relatedMatch wikidata:Q2334719 .
+
+:massMediaPublication a skos:Concept ;
+    skos:inScheme :SourceCategoryScheme, :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Mass media publication"@en ;
+    skos:note "Used both as a source category and trigger object category"@en ;
+    skos:closeMatch schema:NewsArticle, wikidata:Q5707594 .
+
+:socialMediaPost a skos:Concept ;
+    skos:inScheme :SourceCategoryScheme, :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Social media post"@en ;
+    skos:note "Used both as a source category and trigger object category"@en ;
+    skos:exactMatch schema:SocialMediaPosting .
+
+:pressRelease a skos:Concept ;
+    skos:inScheme :SourceCategoryScheme ;
+    skos:prefLabel "Press release"@en ;
+    skos:exactMatch wikidata:Q207184 .
+
+## Trigger Objects
+
+:TriggerObjectCategoryScheme a skos:ConceptScheme ;
+    skos:prefLabel "Categories of objects that triggered administrative or criminal proceedings"@en .
+
+:film a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Film"@en ;
+    skos:exactMatch schema:Movie .
+
+:tvSeries a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "TV series"@en ;
+    skos:exactMatch schema:TVSeries .
+
+:musicVideo a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Music video"@en ;
+    skos:closeMatch schema:MusicVideoObject ;
+    skos:exactMatch wikidata:Q193977 .
+
+:tvProgramme a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "TV programme"@en ;
+    skos:closeMatch schema:BroadcastEvent ;
+    skos:exactMatch wikidata:Q15416 .
+
+:book a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Book"@en ;
+    skos:exactMatch schema:Book ;
+    skos:narrower :comicBook .
+
+:comicBook a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Comics"@en ;
+    skos:exactMatch wikidata:Q1760610 ;
+    skos:broader :book .
+
+:protest a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Protest"@en ;
+    skos:closeMatch wikidata:Q273120 ;
+    skos:broader :publicAction .
+
+:publicAction a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Public action"@en ;
+    skos:narrower :protest, :queerVenue .
+
+:merchandise a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Merchandise"@en ;
+    skos:closeMatch wikidata:Q2424752 ;
+    skos:closeMatch schema:Product ;
+    skos:note "Used to categorise products and items"@en .
+
+:webContent a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Web Content"@en ;
+    skos:exactMatch schema:WebContent ;
+    skos:narrower :datingProfile .
+
+:datingProfile a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Dating profile"@en ;
+    skos:exactMatch wikidata:Q128802099 ;
+    skos:broader :webContent .
+
+:queerVenue a skos:Concept ;
+    skos:inScheme :TriggerObjectCategoryScheme ;
+    skos:prefLabel "Queer venue"@en ;
+    skos:note "We introduced this category to indicate cases of persecution against legal and natural persons associated with queer venues. In such cases, there is usually not a single trigger object indicated, but the fact that a venue is intended for LGBTQIA+ people serves as a trigger. This category can be seen as a subcategory of a public action. Note that this category does not indicate a (type of) physical place."@en ;
+    skos:broader :publicAction ;
+    skos:relatedMatch wikidata:Q64364539 .
