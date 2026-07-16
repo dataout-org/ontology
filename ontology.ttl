@@ -5,6 +5,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix schema: <https://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix wikidata: <https://www.wikidata.org/wiki/> .
@@ -14,13 +15,15 @@
 : a owl:Ontology ;
     rdfs:label "Dataout Ontology"@en ;
     dcterms:creator <https://dataout.org/> ;
-    dcterms:description "This ontology is intended to represent data on SOGIESC-based crimes and discrimination, as well as processes associated with the collection of such data."@en ;
+    dcterms:description "This ontology is intended to represent data on SOGIESC-based crimes and discrimination, as well as processes associated with the collection of such data. The idea behind the Dataout Ontology is to represent instances of human rights violations as phenomena that may be observed in different sources, such as court cases or mass-media publications. There are two main components: the provenance information of an incident and its content. Each observed incident is modelled as an instance of Monitoring Record, resulting from Monitoring Activity. A monitoring record connects to the content and metadata of an incident. There are also controlled vocabularies intended for categorising instances. This ontology introduces custom classes and properties and reuses the PROV Ontology, Schema.org, and DCMI Metadata Terms."@en ;
     vann:preferredNamespacePrefix "dataout"@en ;
     vann:preferredNamespaceUri <https://dataout.org/ontology#> ;
     schema:image <https://github.com/dataout-org/ontology/blob/main/ontology_scheme.png?raw=true> ;
-    dcterms:created "2026-06-12"^^xsd:date ;
+    dcterms:created "2026-07-16"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:versionInfo "1.0.0"@en.
+    bibo:doi "10.5281/zenodo.21393602" ;
+    owl:versionInfo "1.0.0"@en ;
+    owl:versionIRI <https://raw.githubusercontent.com/dataout-org/ontology/v1.0.0/ontology.ttl> .
 
 <https://dataout.org/> a prov:Organization, schema:NGO ;
     schema:name "Dataout Foundation"@en ;
@@ -35,43 +38,43 @@
 
 ## Monitoring activities
 
-:MonitoringActivity a rdfs:Class ;
+:MonitoringActivity a owl:Class ;
     rdfs:subClassOf prov:Activity ;
-    rdfs:label "Monitoring activity"@en ;
-    dcterms:description "Class representing a single monitoring activity. Dataout conducts monitorings of different categories, such as hate crimes, discrimination, administrative and criminal persecution. The categories of monitoring are defined by the MonitoringCategoryScheme"@en .
+    rdfs:label "Monitoring Activity"@en ;
+    rdfs:comment "Class representing a single monitoring activity. Dataout conducts monitorings of different categories, such as hate crimes, discrimination, administrative and criminal persecution. The categories of monitoring are defined by the MonitoringCategoryScheme."@en .
 
-:MonitoringRecord a rdfs:Class ;
+:MonitoringRecord a owl:Class ;
     rdfs:subClassOf prov:Entity ;
-    rdfs:label "Monitoring record"@en ;
-    dcterms:description "A single record resulting from a monitoring activity. For example, if a monitoring activity documents hate crime incidents, an entity representing a hate crime would be a monitoring record."@en .
+    rdfs:label "Monitoring Record"@en ;
+    rdfs:comment "A single record resulting from a monitoring activity. For example, if a monitoring activity documents hate crime incidents, an entity representing a hate crime would be a monitoring record."@en .
 
 ## Judicial
 
-:Penalty a rdfs:Class ;
+:Penalty a owl:Class ;
     rdfs:label "Penalty"@en ;
-    dcterms:description "Penalty imposed by an official body, such as a court."@en .
+    rdfs:comment "Penalty imposed by an official body, such as a court."@en .
 
-:Court a rdfs:Class ;
+:Court a owl:Class ;
     rdfs:subClassOf schema:Organization ;
     rdfs:label "Court"@en ;
-    dcterms:description "Class representing a court of any level"@en .
+    rdfs:comment "Class representing a court of any level."@en .
 
-:Defendant a rdfs:Class ;
+:Defendant a owl:Class ;
     rdfs:label "Defendant"@en ;
-    dcterms:description "A legal or natural person with a role of a defendant in a legal process."@en .
+    rdfs:comment "A legal or natural person with a role of a defendant in a legal process."@en .
 
 ## Sources
 
-:Source a rdfs:Class ;
+:Source a owl:Class ;
     rdfs:subClassOf prov:Entity ;
     rdfs:label "Source"@en ;
-    dcterms:description "A source of a monitoring record indicating provenance information."@en .
+    rdfs:comment "A source of a monitoring record indicating provenance information."@en .
 
 ## Object that triggered proceedings
 
-:TriggerObject a rdfs:Class ;
-    rdfs:label "Trigger object"@en ;
-    dcterms:description "A trigger object is an information object or public action that was used by the authorities as a reason to initiate an administrative or criminal proceeding. For example, in our monitoring of administrative persecution targeting LGBTQIA+ expression in Russia, a trigger object could be a mass media publication, which the Russian mass media regulator (Roskomnadzor) found to be violating, which resulted in a court case against a media company dissimianting such publication."@en .
+:TriggerObject a owl:Class ;
+    rdfs:label "Trigger Object"@en ;
+    rdfs:comment "A trigger object is an information object or public action that was used by the authorities as a reason to initiate an administrative or criminal proceeding. For example, in our monitoring of administrative persecution targeting LGBTQIA+ expression in Russia, a trigger object could be a mass media publication, which the Russian mass media regulator (Roskomnadzor) found to be violating, which resulted in a court case against a media company dissimianting such publication."@en .
 
 # Properties
 
@@ -80,8 +83,8 @@
 :monitoringCategory a owl:ObjectProperty ;
     rdfs:domain :MonitoringActivity ;
     rdfs:range skos:Concept ;
-    rdfs:label "Category of monitoring"@en ;
-    dcterms:description "Connects a monitoring activity to its category."@en .
+    rdfs:label "category of monitoring"@en ;
+    rdfs:comment "Connects a monitoring activity to its category."@en .
 
 ## monitoring record metadata
 
@@ -89,8 +92,8 @@
     rdfs:subPropertyOf dcterms:identifier ;
     rdfs:domain :MonitoringRecord ;
     rdfs:range rdfs:Literal ;
-    rdfs:label "Monitoring record number"@en ;
-    dcterms:description "A unique identifier assigned to a monitoring record within the Dataout monitoring system."@en .
+    rdfs:label "monitoring record number"@en ;
+    rdfs:comment "A unique identifier assigned to a monitoring record within the Dataout monitoring system."@en .
 
 ## judicial
 
@@ -99,55 +102,55 @@
     rdfs:domain :Court ;
     rdfs:range rdfs:Literal ;
     rdfs:label "court code"@en ;
-    dcterms:description "An identifier code assigned to a court by a judicial or administrative authority."@en .
+    rdfs:comment "An identifier code assigned to a court by a judicial or administrative authority."@en .
 
 :concernsLegalArticle a owl:ObjectProperty ;
     rdfs:domain :MonitoringRecord ;
     rdfs:range schema:Legislation ;
     rdfs:label "concerns legal article"@en ;
-    dcterms:description "Connect a monitoring record to a legal article. Useful when monitoring state persecution."@en .
+    rdfs:comment "Connect a monitoring record to a legal article. Useful when monitoring state persecution."@en .
 
 :hasDefendant a owl:ObjectProperty ;
     rdfs:domain :MonitoringRecord ;
     rdfs:range :Defendant ;
     rdfs:label "has defendant"@en ;
-    dcterms:description "A natural person or legal entity, which is referred to as a defendant in a source documents (for example, a court decision or a mass media publication)"@en .
+    rdfs:comment "A natural person or legal entity, which is referred to as a defendant in a source documents (for example, a court decision or a mass media publication)."@en .
 
 :defendantCategory a owl:ObjectProperty ;
     rdfs:domain :Defendant ;
     rdfs:range skos:Concept ;
     rdfs:label "defendant category"@en ;
-    dcterms:description "Connects a defendant to its category."@en .
+    rdfs:comment "Connects a defendant to its category."@en .
 
 :hasTriggerObject a owl:ObjectProperty ;
     rdfs:domain :MonitoringRecord ;
     rdfs:range :TriggerObject ;
     rdfs:label "has trigger object"@en ;
-    dcterms:description "Connects a trigger object to a monitoring record, in which it was mentioned."@en .
+    rdfs:comment "Connects a trigger object to a monitoring record, in which it was mentioned."@en .
 
 :triggerObjectCategory a owl:ObjectProperty ;
     rdfs:domain :TriggerObject ;
     rdfs:range skos:Concept ;
     rdfs:label "trigger object category"@en ;
-    dcterms:description "Categories of trigger objects describe what such object is (for example, a film, a social media post, a protest), but not its legal interpretation by authorities."@en .
+    rdfs:comment "Categories of trigger objects describe what such object is (for example, a film, a social media post, a protest), but not its legal interpretation by authorities."@en .
 
 :hasPenalty a owl:ObjectProperty ;
     rdfs:domain :MonitoringRecord ;
     rdfs:range :Penalty ;
     rdfs:label "has penalty"@en ;
-    dcterms:description "Connects a penalty imposed on a defendant by an official body (a court) to a monitoring record, in which it was mentioned."@en .
+    rdfs:comment "Connects a penalty imposed on a defendant by an official body (a court) to a monitoring record, in which it was mentioned."@en .
 
 :penaltyCategory a owl:ObjectProperty ;
     rdfs:domain :Penalty ;
     rdfs:range skos:Concept ;
     rdfs:label "penalty category"@en ;
-    dcterms:description "Connects a penalty to its category."@en .
+    rdfs:comment "Connects a penalty to its category."@en .
 
 :penaltyValue a owl:ObjectProperty ;
     rdfs:domain :Penalty ;
     rdfs:range schema:StructuredValue ;
     rdfs:label "penalty value"@en ;
-    dcterms:description "Connects a penalty to its value. The value of this property can be a triple, which indicates its quantitative unit (such as a monetary amount or days) and amount. For example, a penalty value could be a quantitative unit of 10 days if the penalty category is detention."@en .
+    rdfs:comment "Connects a penalty to its value. The value of this property can be a triple, which indicates its quantitative unit (such as a monetary amount or days) and amount. For example, a penalty value could be a quantitative unit of 10 days if the penalty category is detention."@en .
 
 ## other monitoring record content
 
@@ -155,20 +158,19 @@
     rdfs:domain :MonitoringRecord ;
     rdfs:range rdfs:Literal ;
     rdfs:label "monitored incident year"@en ;
-    dcterms:description "We categorise monitored incidents by year, during which they occured. This property represents years of incidents."@en .
+    rdfs:comment "We categorise monitored incidents by year, during which they occured. This property represents years of incidents."@en .
 
 :hasSnippet a owl:DatatypeProperty ;
-    rdfs:subPropertyOf dcterms:description ;
     rdfs:domain :MonitoringRecord ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has snippet"@en ;
-    dcterms:description "Connects a monitoring record to its textual summary (a snippet)."@en .
+    rdfs:comment "Connects a monitoring record to its textual summary (a snippet)."@en .
 
 :mentionedIn a owl:ObjectProperty ;
     rdfs:domain :MonitoringRecord ;
     rdfs:range :Source ;
     rdfs:label "mentioned in"@en ;
-    dcterms:description "Used to connect a monitoring record to a source that mentions some information about a monitoring record."@en .
+    rdfs:comment "Used to connect a monitoring record to a source that mentions some information about a monitoring record."@en .
 
 ## sources
 
@@ -176,28 +178,28 @@
     rdfs:domain :Source ;
     rdfs:range skos:Concept ;
     rdfs:label "source category"@en ;
-    dcterms:description "Connects a source to its category."@en .
+    rdfs:comment "Connects a source to its category."@en .
 
 :courtDocumentNumber a owl:DatatypeProperty ;
     rdfs:subPropertyOf dcterms:identifier ;
     rdfs:domain :Source ;
     rdfs:range rdfs:Literal ;
     rdfs:label "court document number"@en ;
-    dcterms:description "Used to indicate a number of a court document assigned by court. It is not necessarily a unique identifier. To indicate unique identifiers, use uniqueCourtDocumentID."@en .
+    rdfs:comment "Used to indicate a number of a court document assigned by court. It is not necessarily a unique identifier. To indicate unique identifiers, use uniqueCourtDocumentID."@en .
 
 :uniqueCourtDocumentID a owl:DatatypeProperty ;
     rdfs:subPropertyOf dcterms:identifier ;
     rdfs:domain :Source ;
     rdfs:range rdfs:Literal ;
     rdfs:label "unique court document ID"@en ;
-    dcterms:description "Unique court document ID assigned by court."@en .
+    rdfs:comment "Unique court document ID assigned by court."@en .
 
 :courtDocumentDate a owl:DatatypeProperty ;
     rdfs:subPropertyOf dcterms:date ;
     rdfs:domain :Source ;
     rdfs:range rdfs:Literal ;
     rdfs:label "court document date"@en ;
-    dcterms:description "Indicates a date stated on a court document."@en .
+    rdfs:comment "Indicates a date stated on a court document."@en .
 
 # Concept Schemes
 
@@ -286,7 +288,7 @@
 ## Sources
 
 :SourceCategoryScheme a skos:ConceptScheme ;
-    skos:prefLabel "Source categories"@en .
+    skos:prefLabel "Source Categories"@en .
 
 :courtDocument a skos:Concept ;
     skos:inScheme :SourceCategoryScheme ;
@@ -313,7 +315,8 @@
 ## Trigger Objects
 
 :TriggerObjectCategoryScheme a skos:ConceptScheme ;
-    skos:prefLabel "Categories of objects that triggered administrative or criminal proceedings"@en .
+    skos:prefLabel "Trigger Object Categories"@en ;
+    skos:note "Categories of objects that triggered administrative or criminal proceedings"@en .
 
 :film a skos:Concept ;
     skos:inScheme :TriggerObjectCategoryScheme ;
@@ -369,7 +372,7 @@
 
 :webContent a skos:Concept ;
     skos:inScheme :TriggerObjectCategoryScheme ;
-    skos:prefLabel "Web Content"@en ;
+    skos:prefLabel "Web content"@en ;
     skos:exactMatch schema:WebContent ;
     skos:narrower :datingProfile .
 
