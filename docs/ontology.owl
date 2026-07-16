@@ -1,0 +1,1095 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://dataout.org/ontology#"
+     xml:base="https://dataout.org/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology rdf:about="https://dataout.org/ontology#">
+        <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/dataout-org/ontology/v1.0.0/ontology.ttl"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-07-16</terms:created>
+        <terms:creator rdf:resource="https://dataout.org/"/>
+        <terms:description xml:lang="en">This ontology is intended to represent data on SOGIESC-based crimes and discrimination, as well as processes associated with the collection of such data. The idea behind the Dataout Ontology is to represent instances of human rights violations as phenomena that may be observed in different sources, such as court cases or mass-media publications. There are two main components: the provenance information of an incident and its content. Each observed incident is modelled as an instance of Monitoring Record, resulting from Monitoring Activity. A monitoring record connects to the content and metadata of an incident. There are also controlled vocabularies intended for categorising instances. This ontology introduces custom classes and properties and reuses the PROV Ontology, Schema.org, and DCMI Metadata Terms.</terms:description>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <bibo:doi>10.5281/zenodo.21393602</bibo:doi>
+        <vann:preferredNamespacePrefix xml:lang="en">dataout</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://dataout.org/ontology#"/>
+        <rdfs:label xml:lang="en">Dataout Ontology</rdfs:label>
+        <owl:versionInfo xml:lang="en">1.0.0</owl:versionInfo>
+        <schema:image rdf:resource="https://github.com/dataout-org/ontology/blob/main/ontology_scheme.png?raw=true"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/doi -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/doi"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#relatedMatch -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch"/>
+    
+
+
+    <!-- https://schema.org/address -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/address"/>
+    
+
+
+    <!-- https://schema.org/alternateName -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/alternateName"/>
+    
+
+
+    <!-- https://schema.org/description -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/description"/>
+    
+
+
+    <!-- https://schema.org/email -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/email"/>
+    
+
+
+    <!-- https://schema.org/image -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/image"/>
+    
+
+
+    <!-- https://schema.org/legalName -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/legalName"/>
+    
+
+
+    <!-- https://schema.org/name -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/name"/>
+    
+
+
+    <!-- https://schema.org/url -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/url"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://dataout.org/ontology#concernsLegalArticle -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#concernsLegalArticle">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringRecord"/>
+        <rdfs:range rdf:resource="https://schema.org/Legislation"/>
+        <rdfs:comment xml:lang="en">Connect a monitoring record to a legal article. Useful when monitoring state persecution.</rdfs:comment>
+        <rdfs:label xml:lang="en">concerns legal article</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#defendantCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#defendantCategory">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#Defendant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Connects a defendant to its category.</rdfs:comment>
+        <rdfs:label xml:lang="en">defendant category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#hasDefendant -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#hasDefendant">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringRecord"/>
+        <rdfs:range rdf:resource="https://dataout.org/ontology#Defendant"/>
+        <rdfs:comment xml:lang="en">A natural person or legal entity, which is referred to as a defendant in a source documents (for example, a court decision or a mass media publication).</rdfs:comment>
+        <rdfs:label xml:lang="en">has defendant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#hasPenalty -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#hasPenalty">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringRecord"/>
+        <rdfs:range rdf:resource="https://dataout.org/ontology#Penalty"/>
+        <rdfs:comment xml:lang="en">Connects a penalty imposed on a defendant by an official body (a court) to a monitoring record, in which it was mentioned.</rdfs:comment>
+        <rdfs:label xml:lang="en">has penalty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#hasTriggerObject -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#hasTriggerObject">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringRecord"/>
+        <rdfs:range rdf:resource="https://dataout.org/ontology#TriggerObject"/>
+        <rdfs:comment xml:lang="en">Connects a trigger object to a monitoring record, in which it was mentioned.</rdfs:comment>
+        <rdfs:label xml:lang="en">has trigger object</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#mentionedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#mentionedIn">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringRecord"/>
+        <rdfs:range rdf:resource="https://dataout.org/ontology#Source"/>
+        <rdfs:comment xml:lang="en">Used to connect a monitoring record to a source that mentions some information about a monitoring record.</rdfs:comment>
+        <rdfs:label xml:lang="en">mentioned in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#monitoringCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#monitoringCategory">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Connects a monitoring activity to its category.</rdfs:comment>
+        <rdfs:label xml:lang="en">category of monitoring</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#penaltyCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#penaltyCategory">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#Penalty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Connects a penalty to its category.</rdfs:comment>
+        <rdfs:label xml:lang="en">penalty category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#penaltyValue -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#penaltyValue">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#Penalty"/>
+        <rdfs:range rdf:resource="https://schema.org/StructuredValue"/>
+        <rdfs:comment xml:lang="en">Connects a penalty to its value. The value of this property can be a triple, which indicates its quantitative unit (such as a monetary amount or days) and amount. For example, a penalty value could be a quantitative unit of 10 days if the penalty category is detention.</rdfs:comment>
+        <rdfs:label xml:lang="en">penalty value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#sourceCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#sourceCategory">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#Source"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Connects a source to its category.</rdfs:comment>
+        <rdfs:label xml:lang="en">source category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#triggerObjectCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://dataout.org/ontology#triggerObjectCategory">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#TriggerObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Categories of trigger objects describe what such object is (for example, a film, a social media post, a protest), but not its legal interpretation by authorities.</rdfs:comment>
+        <rdfs:label xml:lang="en">trigger object category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier"/>
+    
+
+
+    <!-- https://dataout.org/ontology#courtCode -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dataout.org/ontology#courtCode">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#Court"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">An identifier code assigned to a court by a judicial or administrative authority.</rdfs:comment>
+        <rdfs:label xml:lang="en">court code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#courtDocumentDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dataout.org/ontology#courtDocumentDate">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#Source"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Indicates a date stated on a court document.</rdfs:comment>
+        <rdfs:label xml:lang="en">court document date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#courtDocumentNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dataout.org/ontology#courtDocumentNumber">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#Source"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Used to indicate a number of a court document assigned by court. It is not necessarily a unique identifier. To indicate unique identifiers, use uniqueCourtDocumentID.</rdfs:comment>
+        <rdfs:label xml:lang="en">court document number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#hasSnippet -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dataout.org/ontology#hasSnippet">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Connects a monitoring record to its textual summary (a snippet).</rdfs:comment>
+        <rdfs:label xml:lang="en">has snippet</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#monitoredIncidentYear -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dataout.org/ontology#monitoredIncidentYear">
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">We categorise monitored incidents by year, during which they occured. This property represents years of incidents.</rdfs:comment>
+        <rdfs:label xml:lang="en">monitored incident year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#monitoringRecordNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dataout.org/ontology#monitoringRecordNumber">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#MonitoringRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">A unique identifier assigned to a monitoring record within the Dataout monitoring system.</rdfs:comment>
+        <rdfs:label xml:lang="en">monitoring record number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dataout.org/ontology#uniqueCourtDocumentID -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dataout.org/ontology#uniqueCourtDocumentID">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+        <rdfs:domain rdf:resource="https://dataout.org/ontology#Source"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Unique court document ID assigned by court.</rdfs:comment>
+        <rdfs:label xml:lang="en">unique court document ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Activity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Organization -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Organization"/>
+    
+
+
+    <!-- https://dataout.org/ontology#Court -->
+
+
+    <owl:Class rdf:about="https://dataout.org/ontology#Court">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Organization"/>
+        <rdfs:comment xml:lang="en">Class representing a court of any level.</rdfs:comment>
+        <rdfs:label xml:lang="en">Court</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dataout.org/ontology#Defendant -->
+
+
+    <owl:Class rdf:about="https://dataout.org/ontology#Defendant">
+        <rdfs:comment xml:lang="en">A legal or natural person with a role of a defendant in a legal process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Defendant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dataout.org/ontology#MonitoringActivity -->
+
+
+    <owl:Class rdf:about="https://dataout.org/ontology#MonitoringActivity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment xml:lang="en">Class representing a single monitoring activity. Dataout conducts monitorings of different categories, such as hate crimes, discrimination, administrative and criminal persecution. The categories of monitoring are defined by the MonitoringCategoryScheme.</rdfs:comment>
+        <rdfs:label xml:lang="en">Monitoring Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dataout.org/ontology#MonitoringRecord -->
+
+
+    <owl:Class rdf:about="https://dataout.org/ontology#MonitoringRecord">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">A single record resulting from a monitoring activity. For example, if a monitoring activity documents hate crime incidents, an entity representing a hate crime would be a monitoring record.</rdfs:comment>
+        <rdfs:label xml:lang="en">Monitoring Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dataout.org/ontology#Penalty -->
+
+
+    <owl:Class rdf:about="https://dataout.org/ontology#Penalty">
+        <rdfs:comment xml:lang="en">Penalty imposed by an official body, such as a court.</rdfs:comment>
+        <rdfs:label xml:lang="en">Penalty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dataout.org/ontology#Source -->
+
+
+    <owl:Class rdf:about="https://dataout.org/ontology#Source">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">A source of a monitoring record indicating provenance information.</rdfs:comment>
+        <rdfs:label xml:lang="en">Source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dataout.org/ontology#TriggerObject -->
+
+
+    <owl:Class rdf:about="https://dataout.org/ontology#TriggerObject">
+        <rdfs:comment xml:lang="en">A trigger object is an information object or public action that was used by the authorities as a reason to initiate an administrative or criminal proceeding. For example, in our monitoring of administrative persecution targeting LGBTQIA+ expression in Russia, a trigger object could be a mass media publication, which the Russian mass media regulator (Roskomnadzor) found to be violating, which resulted in a court case against a media company dissimianting such publication.</rdfs:comment>
+        <rdfs:label xml:lang="en">Trigger Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Legislation -->
+
+
+    <owl:Class rdf:about="https://schema.org/Legislation"/>
+    
+
+
+    <!-- https://schema.org/NGO -->
+
+
+    <owl:Class rdf:about="https://schema.org/NGO"/>
+    
+
+
+    <!-- https://schema.org/Organization -->
+
+
+    <owl:Class rdf:about="https://schema.org/Organization"/>
+    
+
+
+    <!-- https://schema.org/StructuredValue -->
+
+
+    <owl:Class rdf:about="https://schema.org/StructuredValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://dataout.org/ -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+        <rdf:type rdf:resource="https://schema.org/NGO"/>
+        <schema:address xml:lang="en">The Hague, the Netherlands</schema:address>
+        <schema:alternateName xml:lang="en">Dataout</schema:alternateName>
+        <schema:description xml:lang="en">Dataout is a nonprofit dedicated to uncovering discrimination and crimes based on SOGIESC – sexual orientation, gender identity &amp; expression, and sex characteristics. By conducting research and releasing open data, we aim to empower journalists, researchers, human rights advocates, and policymakers in creating a better social and legal environment for LGBTQIA+ people and others affected by SOGIESC-based discrimination. We focus on the regions where these issues are severe and least visible.</schema:description>
+        <schema:email rdf:resource="mailto:contact@dataout.org"/>
+        <schema:legalName xml:lang="en">Dataout Foundation</schema:legalName>
+        <schema:legalName xml:lang="nl">Stichting Dataout</schema:legalName>
+        <schema:name xml:lang="en">Dataout Foundation</schema:name>
+        <schema:url rdf:resource="https://dataout.org/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#DefendantCategoryScheme -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#DefendantCategoryScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <skos:prefLabel xml:lang="en">Defendant Categories</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#LegislationCategoryScheme -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#LegislationCategoryScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <skos:prefLabel xml:lang="en">Legislation Categories</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#MonitoringCategoryScheme -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#MonitoringCategoryScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <skos:prefLabel xml:lang="en">Monitoring Categories</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#PenaltyCategoryScheme -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#PenaltyCategoryScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <skos:prefLabel xml:lang="en">Penalty Categories</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#SourceCategoryScheme -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#SourceCategoryScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <skos:prefLabel xml:lang="en">Source Categories</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#TriggerObjectCategoryScheme -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#TriggerObjectCategoryScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <skos:note xml:lang="en">Categories of objects that triggered administrative or criminal proceedings</skos:note>
+        <skos:prefLabel xml:lang="en">Trigger Object Categories</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#administrativeCode -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#administrativeCode">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#LegislationCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Administrative Code</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#administrativePersecution -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#administrativePersecution">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#MonitoringCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Administrative persecution</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#book -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#book">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:exactMatch rdf:resource="https://schema.org/Book"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:narrower rdf:resource="https://dataout.org/ontology#comicBook"/>
+        <skos:prefLabel xml:lang="en">Book</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#comicBook -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#comicBook">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broader rdf:resource="https://dataout.org/ontology#book"/>
+        <skos:exactMatch rdf:resource="https://www.wikidata.org/wiki/Q1760610"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Comics</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#constitution -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#constitution">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#LegislationCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Constitution</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#courtDocument -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#courtDocument">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#SourceCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Court document</skos:prefLabel>
+        <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/Q2334719"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#criminalCode -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#criminalCode">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#LegislationCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Criminal Code</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#criminalPersecution -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#criminalPersecution">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q80111632"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#MonitoringCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Criminal persecution</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#datingProfile -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#datingProfile">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broader rdf:resource="https://dataout.org/ontology#webContent"/>
+        <skos:exactMatch rdf:resource="https://www.wikidata.org/wiki/Q128802099"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Dating profile</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#detention -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#detention">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#PenaltyCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Detention</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#expulsion -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#expulsion">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#PenaltyCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Expulsion</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#federalLaw -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#federalLaw">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#LegislationCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Federal law</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#film -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#film">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:exactMatch rdf:resource="https://schema.org/Movie"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Film</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#fine -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#fine">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#PenaltyCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Fine</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#hateCrimes -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#hateCrimes">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q459409"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#MonitoringCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Hate crimes</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#individual -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#individual">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:closeMatch rdf:resource="https://schema.org/Person"/>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q795052"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#DefendantCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Individual</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#legalEntity -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#legalEntity">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#DefendantCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Legal entity</skos:prefLabel>
+        <skos:relatedMatch rdf:resource="https://schema.org/Organization"/>
+        <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/Q3778211"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#massMediaPublication -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#massMediaPublication">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:closeMatch rdf:resource="https://schema.org/NewsArticle"/>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q5707594"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#SourceCategoryScheme"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:note xml:lang="en">Used both as a source category and trigger object category</skos:note>
+        <skos:prefLabel xml:lang="en">Mass media publication</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#merchandise -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#merchandise">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:closeMatch rdf:resource="https://schema.org/Product"/>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q2424752"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:note xml:lang="en">Used to categorise products and items</skos:note>
+        <skos:prefLabel xml:lang="en">Merchandise</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#musicVideo -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#musicVideo">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:closeMatch rdf:resource="https://schema.org/MusicVideoObject"/>
+        <skos:exactMatch rdf:resource="https://www.wikidata.org/wiki/Q193977"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Music video</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#official -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#official">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q599151"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#DefendantCategoryScheme"/>
+        <skos:note xml:lang="en">used in a legal context.</skos:note>
+        <skos:prefLabel xml:lang="en">Official</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#pressRelease -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#pressRelease">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:exactMatch rdf:resource="https://www.wikidata.org/wiki/Q207184"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#SourceCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Press release</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#protest -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#protest">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broader rdf:resource="https://dataout.org/ontology#publicAction"/>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q273120"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Protest</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#publicAction -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#publicAction">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:narrower rdf:resource="https://dataout.org/ontology#protest"/>
+        <skos:narrower rdf:resource="https://dataout.org/ontology#queerVenue"/>
+        <skos:prefLabel xml:lang="en">Public action</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#queerVenue -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#queerVenue">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broader rdf:resource="https://dataout.org/ontology#publicAction"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:note xml:lang="en">We introduced this category to indicate cases of persecution against legal and natural persons associated with queer venues. In such cases, there is usually not a single trigger object indicated, but the fact that a venue is intended for LGBTQIA+ people serves as a trigger. This category can be seen as a subcategory of a public action. Note that this category does not indicate a (type of) physical place.</skos:note>
+        <skos:prefLabel xml:lang="en">Queer venue</skos:prefLabel>
+        <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/Q64364539"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#socialMediaPost -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#socialMediaPost">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:exactMatch rdf:resource="https://schema.org/SocialMediaPosting"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#SourceCategoryScheme"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:note xml:lang="en">Used both as a source category and trigger object category</skos:note>
+        <skos:prefLabel xml:lang="en">Social media post</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#tvProgramme -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#tvProgramme">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:closeMatch rdf:resource="https://schema.org/BroadcastEvent"/>
+        <skos:exactMatch rdf:resource="https://www.wikidata.org/wiki/Q15416"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">TV programme</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#tvSeries -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#tvSeries">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:exactMatch rdf:resource="https://schema.org/TVSeries"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">TV series</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#warning -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#warning">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#PenaltyCategoryScheme"/>
+        <skos:prefLabel xml:lang="en">Warning</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dataout.org/ontology#webContent -->
+
+
+    <owl:NamedIndividual rdf:about="https://dataout.org/ontology#webContent">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:exactMatch rdf:resource="https://schema.org/WebContent"/>
+        <skos:inScheme rdf:resource="https://dataout.org/ontology#TriggerObjectCategoryScheme"/>
+        <skos:narrower rdf:resource="https://dataout.org/ontology#datingProfile"/>
+        <skos:prefLabel xml:lang="en">Web content</skos:prefLabel>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

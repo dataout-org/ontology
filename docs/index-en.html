@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://dataout.org/ontology#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://dataout.org/ontology#","name":"https://dataout.org/ontology#", "headline":"Document describing the ontology https://dataout.org/ontology#", "dateReleased":"2026-06-12", "version":"2.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Dataout Foundation","url":"https://dataout.org/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://dataout.org/ontology#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://dataout.org/ontology#","name":"https://dataout.org/ontology#", "headline":"Document describing the ontology https://dataout.org/ontology#", "dateReleased":"2026-07-16", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Dataout Foundation","url":"https://dataout.org/"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -65,22 +65,22 @@ $(function(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h2>Release: 2026-06-12</h2>
+<h2>Release: 2026-07-16</h2>
 
 
 <dl>
 <dt>This version:</dt>
-<dd><a href="ontology_v2.ttl">ontology_v2.ttl</a></dd>
-<dt>Previous version:</dt>
-<dd><a href="ontology_v1.ttl">ontology_v1.ttl</a></dd>
+<dd><a href="https://raw.githubusercontent.com/dataout-org/ontology/v1.0.0/ontology.ttl">https://raw.githubusercontent.com/dataout-org/ontology/v1.0.0/ontology.ttl</a></dd>
 <dt>Revision:</dt>
-<dd>2.0.0</dd>
+<dd>1.0.0</dd>
 <dt>Authors:</dt>
 <dd><a href="https://dataout.org/">Dataout Foundation</a><a href="mailto:contact@dataout.org">&#9993;</a></dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Dataout Foundation. Revision: 2.0.0. Retrieved from: http://127.0.0.1:9001/ontology.ttl</dd>
+<dd>Dataout Foundation. Revision: 1.0.0. Retrieved from: https://raw.githubusercontent.com/dataout-org/ontology/v1.0.0/ontology.ttl</dd>
+<dt>DOI:</dt>
+<dd><a href="http://dx.doi.org/10.5281/zenodo.21393602"><img src ="https://img.shields.io/badge/DOI-10.5281/zenodo.21393602-blue.svg" alt="10.5281/zenodo.21393602" /></a></dd>
 </dl>
 
 <hr/>
@@ -110,84 +110,63 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#Court" title="https://dataout.org/ontology#Court">
-         <span>Court</span>
-      </a>
+      <a href="#Court" title="https://dataout.org/ontology#Court">Court</a>
    </li>
    <li>
-      <a href="#MonitoringActivity" title="https://dataout.org/ontology#MonitoringActivity">
-         <span>Monitoring activity</span>
-      </a>
+      <a href="#Defendant" title="https://dataout.org/ontology#Defendant">Defendant</a>
    </li>
    <li>
-      <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">
-         <span>Monitoring record</span>
-      </a>
+      <a href="#MonitoringActivity" title="https://dataout.org/ontology#MonitoringActivity">Monitoring Activity</a>
    </li>
    <li>
-      <a href="#Source" title="https://dataout.org/ontology#Source">
-         <span>Source</span>
-      </a>
+      <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a>
+   </li>
+   <li>
+      <a href="#Penalty" title="https://dataout.org/ontology#Penalty">Penalty</a>
+   </li>
+   <li>
+      <a href="#Source" title="https://dataout.org/ontology#Source">Source</a>
+   </li>
+   <li>
+      <a href="#TriggerObject" title="https://dataout.org/ontology#TriggerObject">Trigger Object</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#monitoringCategory" title="https://dataout.org/ontology#monitoringCategory">
-         <span>Category of monitoring</span>
-      </a>
+      <a href="#monitoringCategory" title="https://dataout.org/ontology#monitoringCategory">category of monitoring</a>
    </li>
    <li>
       <a href="#concernsLegalArticle"
-         title="https://dataout.org/ontology#concernsLegalArticle">
-         <span>concerns legal article</span>
-      </a>
+         title="https://dataout.org/ontology#concernsLegalArticle">concerns legal article</a>
    </li>
    <li>
-      <a href="#defendantCategory" title="https://dataout.org/ontology#defendantCategory">
-         <span>defendant category</span>
-      </a>
+      <a href="#defendantCategory" title="https://dataout.org/ontology#defendantCategory">defendant category</a>
    </li>
    <li>
-      <a href="#hasDefendant" title="https://dataout.org/ontology#hasDefendant">
-         <span>has defendant</span>
-      </a>
+      <a href="#hasDefendant" title="https://dataout.org/ontology#hasDefendant">has defendant</a>
    </li>
    <li>
-      <a href="#hasPenalty" title="https://dataout.org/ontology#hasPenalty">
-         <span>has penalty</span>
-      </a>
+      <a href="#hasPenalty" title="https://dataout.org/ontology#hasPenalty">has penalty</a>
    </li>
    <li>
-      <a href="#hasTriggerObject" title="https://dataout.org/ontology#hasTriggerObject">
-         <span>has trigger object</span>
-      </a>
+      <a href="#hasTriggerObject" title="https://dataout.org/ontology#hasTriggerObject">has trigger object</a>
    </li>
    <li>
-      <a href="#mentionedIn" title="https://dataout.org/ontology#mentionedIn">
-         <span>mentioned in</span>
-      </a>
+      <a href="#mentionedIn" title="https://dataout.org/ontology#mentionedIn">mentioned in</a>
    </li>
    <li>
-      <a href="#penaltyCategory" title="https://dataout.org/ontology#penaltyCategory">
-         <span>penalty category</span>
-      </a>
+      <a href="#penaltyCategory" title="https://dataout.org/ontology#penaltyCategory">penalty category</a>
    </li>
    <li>
-      <a href="#penaltyValue" title="https://dataout.org/ontology#penaltyValue">
-         <span>penalty value</span>
-      </a>
+      <a href="#penaltyValue" title="https://dataout.org/ontology#penaltyValue">penalty value</a>
    </li>
    <li>
-      <a href="#sourceCategory" title="https://dataout.org/ontology#sourceCategory">
-         <span>source category</span>
-      </a>
+      <a href="#sourceCategory" title="https://dataout.org/ontology#sourceCategory">source category</a>
    </li>
    <li>
       <a href="#triggerObjectCategory"
-         title="https://dataout.org/ontology#triggerObjectCategory">
-         <span>trigger object category</span>
-      </a>
+         title="https://dataout.org/ontology#triggerObjectCategory">trigger object category</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -196,37 +175,25 @@ This ontology has the following classes and properties.</span>
       <a href="#courtCode" title="https://dataout.org/ontology#courtCode">court code</a>
    </li>
    <li>
-      <a href="#courtDocumentDate" title="https://dataout.org/ontology#courtDocumentDate">
-         <span>court document date</span>
-      </a>
+      <a href="#courtDocumentDate" title="https://dataout.org/ontology#courtDocumentDate">court document date</a>
    </li>
    <li>
-      <a href="#courtDocumentNumber" title="https://dataout.org/ontology#courtDocumentNumber">
-         <span>court document number</span>
-      </a>
+      <a href="#courtDocumentNumber" title="https://dataout.org/ontology#courtDocumentNumber">court document number</a>
    </li>
    <li>
-      <a href="#hasSnippet" title="https://dataout.org/ontology#hasSnippet">
-         <span>has snippet</span>
-      </a>
+      <a href="#hasSnippet" title="https://dataout.org/ontology#hasSnippet">has snippet</a>
    </li>
    <li>
       <a href="#monitoredIncidentYear"
-         title="https://dataout.org/ontology#monitoredIncidentYear">
-         <span>monitored incident year</span>
-      </a>
+         title="https://dataout.org/ontology#monitoredIncidentYear">monitored incident year</a>
    </li>
    <li>
       <a href="#monitoringRecordNumber"
-         title="https://dataout.org/ontology#monitoringRecordNumber">
-         <span>Monitoring record number</span>
-      </a>
+         title="https://dataout.org/ontology#monitoringRecordNumber">monitoring record number</a>
    </li>
    <li>
       <a href="#uniqueCourtDocumentID"
-         title="https://dataout.org/ontology#uniqueCourtDocumentID">
-         <span>unique court document ID</span>
-      </a>
+         title="https://dataout.org/ontology#uniqueCourtDocumentID">unique court document ID</a>
    </li>
 </ul>
 </div>
@@ -235,7 +202,7 @@ This ontology has the following classes and properties.</span>
 <!--DESCRIPTION SECTION-->
     <div id="description"><h2 id="desc" class="list">Dataout Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
-<span class="markdown">This ontology is intended to represent data on SOGIESC-based crimes and discrimination, as well as processes associated with the collection of such data.</span><img src="https://github.com/dataout-org/ontology/blob/main/ontology_scheme.png?raw=true"></div>
+<span class="markdown">This ontology is intended to represent data on SOGIESC-based crimes and discrimination, as well as processes associated with the collection of such data. The idea behind the Dataout Ontology is to represent instances of human rights violations as phenomena that may be observed in different sources, such as court cases or mass-media publications. There are two main components: the provenance information of an incident and its content. Each observed incident is modelled as an instance of Monitoring Record, resulting from Monitoring Activity. A monitoring record connects to the content and metadata of an incident. There are also controlled vocabularies intended for categorising instances. This ontology introduces custom classes and properties and reuses the PROV Ontology, Schema.org, and DCMI Metadata Terms.</span><img src="https://github.com/dataout-org/ontology/blob/main/ontology_scheme.png?raw=true"></div>
    
 
 <!--CROSSREF SECTION-->
@@ -244,14 +211,20 @@ This section provides details for each class and property defined by Dataout Ont
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
-  <li><a href="#Court" title="https://dataout.org/ontology#Court"> <span>Court</span> </a></li>
-  <li><a href="#MonitoringActivity" title="https://dataout.org/ontology#MonitoringActivity"> <span>Monitoring activity</span> </a></li>
-  <li><a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord"> <span>Monitoring record</span> </a></li>
-  <li><a href="#Source" title="https://dataout.org/ontology#Source"> <span>Source</span> </a></li>
+  <li><a href="#Court" title="https://dataout.org/ontology#Court">Court</a></li>
+  <li><a href="#Defendant" title="https://dataout.org/ontology#Defendant">Defendant</a></li>
+  <li><a href="#MonitoringActivity" title="https://dataout.org/ontology#MonitoringActivity">Monitoring Activity</a></li>
+  <li><a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a></li>
+  <li><a href="#Penalty" title="https://dataout.org/ontology#Penalty">Penalty</a></li>
+  <li><a href="#Source" title="https://dataout.org/ontology#Source">Source</a></li>
+  <li><a href="#TriggerObject" title="https://dataout.org/ontology#TriggerObject">Trigger Object</a></li>
  </ul>
  <div class="entity" id="Court">
   <h3>Court<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#Court</p>
+  <div class="comment">
+   <span class="markdown">Class representing a court of any level.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -265,17 +238,35 @@ This section provides details for each class and property defined by Dataout Ont
    <dd>
     <a href="#courtCode" title="https://dataout.org/ontology#courtCode">court code</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Defendant">
+  <h3>Defendant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://dataout.org/ontology#Defendant</p>
+  <div class="comment">
+   <span class="markdown">A legal or natural person with a role of a defendant in a legal process.</span>
+  </div>
+  <dl class="description">
    <dt>
-    is also defined as
+    is in domain of
    </dt>
    <dd>
-    <a href="#Court">named individual</a>
+    <a href="#defendantCategory" title="https://dataout.org/ontology#defendantCategory">defendant category</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasDefendant" title="https://dataout.org/ontology#hasDefendant">has defendant</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="MonitoringActivity">
-  <h3>Monitoring activity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>Monitoring Activity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#MonitoringActivity</p>
+  <div class="comment">
+   <span class="markdown">Class representing a single monitoring activity. Dataout conducts monitorings of different categories, such as hate crimes, discrimination, administrative and criminal persecution. The categories of monitoring are defined by the MonitoringCategoryScheme.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -287,19 +278,16 @@ This section provides details for each class and property defined by Dataout Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#monitoringCategory" title="https://dataout.org/ontology#monitoringCategory">Category of monitoring</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-   <dt>
-    is also defined as
-   </dt>
-   <dd>
-    <a href="#MonitoringActivity">named individual</a>
+    <a href="#monitoringCategory" title="https://dataout.org/ontology#monitoringCategory">category of monitoring</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="MonitoringRecord">
-  <h3>Monitoring record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <h3>Monitoring Record<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#MonitoringRecord</p>
+  <div class="comment">
+   <span class="markdown">A single record resulting from a monitoring activity. For example, if a monitoring activity documents hate crime incidents, an entity representing a hate crime would be a monitoring record.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -311,19 +299,37 @@ This section provides details for each class and property defined by Dataout Ont
     is in domain of
    </dt>
    <dd>
-    <a href="#monitoringRecordNumber" title="https://dataout.org/ontology#monitoringRecordNumber">Monitoring record number</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#concernsLegalArticle" title="https://dataout.org/ontology#concernsLegalArticle">concerns legal article</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDefendant" title="https://dataout.org/ontology#hasDefendant">has defendant</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPenalty" title="https://dataout.org/ontology#hasPenalty">has penalty</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasSnippet" title="https://dataout.org/ontology#hasSnippet">has snippet</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTriggerObject" title="https://dataout.org/ontology#hasTriggerObject">has trigger object</a> <sup class="type-op" title="object property">op</sup>, <a href="#mentionedIn" title="https://dataout.org/ontology#mentionedIn">mentioned in</a> <sup class="type-op" title="object property">op</sup>, <a href="#monitoredIncidentYear" title="https://dataout.org/ontology#monitoredIncidentYear">monitored incident year</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#concernsLegalArticle" title="https://dataout.org/ontology#concernsLegalArticle">concerns legal article</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDefendant" title="https://dataout.org/ontology#hasDefendant">has defendant</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPenalty" title="https://dataout.org/ontology#hasPenalty">has penalty</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasSnippet" title="https://dataout.org/ontology#hasSnippet">has snippet</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTriggerObject" title="https://dataout.org/ontology#hasTriggerObject">has trigger object</a> <sup class="type-op" title="object property">op</sup>, <a href="#mentionedIn" title="https://dataout.org/ontology#mentionedIn">mentioned in</a> <sup class="type-op" title="object property">op</sup>, <a href="#monitoredIncidentYear" title="https://dataout.org/ontology#monitoredIncidentYear">monitored incident year</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#monitoringRecordNumber" title="https://dataout.org/ontology#monitoringRecordNumber">monitoring record number</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Penalty">
+  <h3>Penalty<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://dataout.org/ontology#Penalty</p>
+  <div class="comment">
+   <span class="markdown">Penalty imposed by an official body, such as a court.</span>
+  </div>
+  <dl class="description">
    <dt>
-    is also defined as
+    is in domain of
    </dt>
    <dd>
-    <a href="#MonitoringRecord">named individual</a>
+    <a href="#penaltyCategory" title="https://dataout.org/ontology#penaltyCategory">penalty category</a> <sup class="type-op" title="object property">op</sup>, <a href="#penaltyValue" title="https://dataout.org/ontology#penaltyValue">penalty value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasPenalty" title="https://dataout.org/ontology#hasPenalty">has penalty</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Source">
   <h3>Source<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#Source</p>
+  <div class="comment">
+   <span class="markdown">A source of a monitoring record indicating provenance information.</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -343,51 +349,63 @@ This section provides details for each class and property defined by Dataout Ont
    <dd>
     <a href="#mentionedIn" title="https://dataout.org/ontology#mentionedIn">mentioned in</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TriggerObject">
+  <h3>Trigger Object<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://dataout.org/ontology#TriggerObject</p>
+  <div class="comment">
+   <span class="markdown">A trigger object is an information object or public action that was used by the authorities as a reason to initiate an administrative or criminal proceeding. For example, in our monitoring of administrative persecution targeting LGBTQIA+ expression in Russia, a trigger object could be a mass media publication, which the Russian mass media regulator (Roskomnadzor) found to be violating, which resulted in a court case against a media company dissimianting such publication.</span>
+  </div>
+  <dl class="description">
    <dt>
-    is also defined as
+    is in domain of
    </dt>
    <dd>
-    <a href="#Source">named individual</a>
+    <a href="#triggerObjectCategory" title="https://dataout.org/ontology#triggerObjectCategory">trigger object category</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasTriggerObject" title="https://dataout.org/ontology#hasTriggerObject">has trigger object</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
-  <li><a href="#monitoringCategory" title="https://dataout.org/ontology#monitoringCategory"> <span>Category of monitoring</span> </a></li>
-  <li><a href="#concernsLegalArticle" title="https://dataout.org/ontology#concernsLegalArticle"> <span>concerns legal article</span> </a></li>
-  <li><a href="#defendantCategory" title="https://dataout.org/ontology#defendantCategory"> <span>defendant category</span> </a></li>
-  <li><a href="#hasDefendant" title="https://dataout.org/ontology#hasDefendant"> <span>has defendant</span> </a></li>
-  <li><a href="#hasPenalty" title="https://dataout.org/ontology#hasPenalty"> <span>has penalty</span> </a></li>
-  <li><a href="#hasTriggerObject" title="https://dataout.org/ontology#hasTriggerObject"> <span>has trigger object</span> </a></li>
-  <li><a href="#mentionedIn" title="https://dataout.org/ontology#mentionedIn"> <span>mentioned in</span> </a></li>
-  <li><a href="#penaltyCategory" title="https://dataout.org/ontology#penaltyCategory"> <span>penalty category</span> </a></li>
-  <li><a href="#penaltyValue" title="https://dataout.org/ontology#penaltyValue"> <span>penalty value</span> </a></li>
-  <li><a href="#sourceCategory" title="https://dataout.org/ontology#sourceCategory"> <span>source category</span> </a></li>
-  <li><a href="#triggerObjectCategory" title="https://dataout.org/ontology#triggerObjectCategory"> <span>trigger object category</span> </a></li>
+  <li><a href="#monitoringCategory" title="https://dataout.org/ontology#monitoringCategory">category of monitoring</a></li>
+  <li><a href="#concernsLegalArticle" title="https://dataout.org/ontology#concernsLegalArticle">concerns legal article</a></li>
+  <li><a href="#defendantCategory" title="https://dataout.org/ontology#defendantCategory">defendant category</a></li>
+  <li><a href="#hasDefendant" title="https://dataout.org/ontology#hasDefendant">has defendant</a></li>
+  <li><a href="#hasPenalty" title="https://dataout.org/ontology#hasPenalty">has penalty</a></li>
+  <li><a href="#hasTriggerObject" title="https://dataout.org/ontology#hasTriggerObject">has trigger object</a></li>
+  <li><a href="#mentionedIn" title="https://dataout.org/ontology#mentionedIn">mentioned in</a></li>
+  <li><a href="#penaltyCategory" title="https://dataout.org/ontology#penaltyCategory">penalty category</a></li>
+  <li><a href="#penaltyValue" title="https://dataout.org/ontology#penaltyValue">penalty value</a></li>
+  <li><a href="#sourceCategory" title="https://dataout.org/ontology#sourceCategory">source category</a></li>
+  <li><a href="#triggerObjectCategory" title="https://dataout.org/ontology#triggerObjectCategory">trigger object category</a></li>
  </ul>
  <div class="entity" id="monitoringCategory">
-  <h3>Category of monitoring<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>category of monitoring<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#monitoringCategory</p>
+  <div class="comment">
+   <span class="markdown">Connects a monitoring activity to its category.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringActivity" title="https://dataout.org/ontology#MonitoringActivity">Monitoring activity</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringActivity" title="https://dataout.org/ontology#MonitoringActivity">Monitoring Activity</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#monitoringCategory">named individual</a>
     </dd>
    </dl>
   </div>
@@ -395,13 +413,16 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="concernsLegalArticle">
   <h3>concerns legal article<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#concernsLegalArticle</p>
+  <div class="comment">
+   <span class="markdown">Connect a monitoring record to a legal article. Useful when monitoring state persecution.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring record</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -409,37 +430,28 @@ This section provides details for each class and property defined by Dataout Ont
     <dd>
      <a href="https://schema.org/Legislation" target="_blank" title="https://schema.org/Legislation">Legislation</a> <sup class="type-c" title="class">c</sup>
     </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#concernsLegalArticle">named individual</a>
-    </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="defendantCategory">
   <h3>defendant category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#defendantCategory</p>
+  <div class="comment">
+   <span class="markdown">Connects a defendant to its category.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="https://dataout.org/ontology#Defendant" target="_blank" title="https://dataout.org/ontology#Defendant">Defendant</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Defendant" title="https://dataout.org/ontology#Defendant">Defendant</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#defendantCategory">named individual</a>
     </dd>
    </dl>
   </div>
@@ -447,25 +459,22 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="hasDefendant">
   <h3>has defendant<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#hasDefendant</p>
+  <div class="comment">
+   <span class="markdown">A natural person or legal entity, which is referred to as a defendant in a source documents (for example, a court decision or a mass media publication).</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring record</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="https://dataout.org/ontology#Defendant" target="_blank" title="https://dataout.org/ontology#Defendant">Defendant</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#hasDefendant">named individual</a>
+     <a href="#Defendant" title="https://dataout.org/ontology#Defendant">Defendant</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -473,25 +482,22 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="hasPenalty">
   <h3>has penalty<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#hasPenalty</p>
+  <div class="comment">
+   <span class="markdown">Connects a penalty imposed on a defendant by an official body (a court) to a monitoring record, in which it was mentioned.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring record</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="https://dataout.org/ontology#Penalty" target="_blank" title="https://dataout.org/ontology#Penalty">Penalty</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#hasPenalty">named individual</a>
+     <a href="#Penalty" title="https://dataout.org/ontology#Penalty">Penalty</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -499,25 +505,22 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="hasTriggerObject">
   <h3>has trigger object<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#hasTriggerObject</p>
+  <div class="comment">
+   <span class="markdown">Connects a trigger object to a monitoring record, in which it was mentioned.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring record</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="https://dataout.org/ontology#TriggerObject" target="_blank" title="https://dataout.org/ontology#TriggerObject">Trigger object</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#hasTriggerObject">named individual</a>
+     <a href="#TriggerObject" title="https://dataout.org/ontology#TriggerObject">Trigger Object</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -525,25 +528,22 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="mentionedIn">
   <h3>mentioned in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#mentionedIn</p>
+  <div class="comment">
+   <span class="markdown">Used to connect a monitoring record to a source that mentions some information about a monitoring record.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring record</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
      <a href="#Source" title="https://dataout.org/ontology#Source">Source</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#mentionedIn">named individual</a>
     </dd>
    </dl>
   </div>
@@ -551,13 +551,16 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="penaltyCategory">
   <h3>penalty category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#penaltyCategory</p>
+  <div class="comment">
+   <span class="markdown">Connects a penalty to its category.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="https://dataout.org/ontology#Penalty" target="_blank" title="https://dataout.org/ontology#Penalty">Penalty</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Penalty" title="https://dataout.org/ontology#Penalty">Penalty</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -565,25 +568,22 @@ This section provides details for each class and property defined by Dataout Ont
     <dd>
      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
     </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#penaltyCategory">named individual</a>
-    </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="penaltyValue">
   <h3>penalty value<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#penaltyValue</p>
+  <div class="comment">
+   <span class="markdown">Connects a penalty to its value. The value of this property can be a triple, which indicates its quantitative unit (such as a monetary amount or days) and amount. For example, a penalty value could be a quantitative unit of 10 days if the penalty category is detention.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="https://dataout.org/ontology#Penalty" target="_blank" title="https://dataout.org/ontology#Penalty">Penalty</a> <sup class="type-c" title="class">c</sup>
+     <a href="#Penalty" title="https://dataout.org/ontology#Penalty">Penalty</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -591,18 +591,15 @@ This section provides details for each class and property defined by Dataout Ont
     <dd>
      <a href="https://schema.org/StructuredValue" target="_blank" title="https://schema.org/StructuredValue">Structured Value</a> <sup class="type-c" title="class">c</sup>
     </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#penaltyValue">named individual</a>
-    </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="sourceCategory">
   <h3>source category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#sourceCategory</p>
+  <div class="comment">
+   <span class="markdown">Connects a source to its category.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -617,37 +614,28 @@ This section provides details for each class and property defined by Dataout Ont
     <dd>
      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
     </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#sourceCategory">named individual</a>
-    </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="triggerObjectCategory">
   <h3>trigger object category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#triggerObjectCategory</p>
+  <div class="comment">
+   <span class="markdown">Categories of trigger objects describe what such object is (for example, a film, a social media post, a protest), but not its legal interpretation by authorities.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="https://dataout.org/ontology#TriggerObject" target="_blank" title="https://dataout.org/ontology#TriggerObject">Trigger object</a> <sup class="type-c" title="class">c</sup>
+     <a href="#TriggerObject" title="https://dataout.org/ontology#TriggerObject">Trigger Object</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#triggerObjectCategory">named individual</a>
     </dd>
    </dl>
   </div>
@@ -656,12 +644,12 @@ This section provides details for each class and property defined by Dataout Ont
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
   <li><a href="#courtCode" title="https://dataout.org/ontology#courtCode">court code</a></li>
-  <li><a href="#courtDocumentDate" title="https://dataout.org/ontology#courtDocumentDate"> <span>court document date</span> </a></li>
-  <li><a href="#courtDocumentNumber" title="https://dataout.org/ontology#courtDocumentNumber"> <span>court document number</span> </a></li>
-  <li><a href="#hasSnippet" title="https://dataout.org/ontology#hasSnippet"> <span>has snippet</span> </a></li>
-  <li><a href="#monitoredIncidentYear" title="https://dataout.org/ontology#monitoredIncidentYear"> <span>monitored incident year</span> </a></li>
-  <li><a href="#monitoringRecordNumber" title="https://dataout.org/ontology#monitoringRecordNumber"> <span>Monitoring record number</span> </a></li>
-  <li><a href="#uniqueCourtDocumentID" title="https://dataout.org/ontology#uniqueCourtDocumentID"> <span>unique court document ID</span> </a></li>
+  <li><a href="#courtDocumentDate" title="https://dataout.org/ontology#courtDocumentDate">court document date</a></li>
+  <li><a href="#courtDocumentNumber" title="https://dataout.org/ontology#courtDocumentNumber">court document number</a></li>
+  <li><a href="#hasSnippet" title="https://dataout.org/ontology#hasSnippet">has snippet</a></li>
+  <li><a href="#monitoredIncidentYear" title="https://dataout.org/ontology#monitoredIncidentYear">monitored incident year</a></li>
+  <li><a href="#monitoringRecordNumber" title="https://dataout.org/ontology#monitoringRecordNumber">monitoring record number</a></li>
+  <li><a href="#uniqueCourtDocumentID" title="https://dataout.org/ontology#uniqueCourtDocumentID">unique court document ID</a></li>
  </ul>
  <div class="entity" id="courtCode">
   <h3>court code<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
@@ -695,6 +683,9 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="courtDocumentDate">
   <h3>court document date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#courtDocumentDate</p>
+  <div class="comment">
+   <span class="markdown">Indicates a date stated on a court document.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -715,18 +706,15 @@ This section provides details for each class and property defined by Dataout Ont
     <dd>
      <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
     </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#courtDocumentDate">named individual</a>
-    </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="courtDocumentNumber">
   <h3>court document number<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#courtDocumentNumber</p>
+  <div class="comment">
+   <span class="markdown">Used to indicate a number of a court document assigned by court. It is not necessarily a unique identifier. To indicate unique identifiers, use uniqueCourtDocumentID.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -746,12 +734,6 @@ This section provides details for each class and property defined by Dataout Ont
     </dt>
     <dd>
      <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#courtDocumentNumber">named individual</a>
     </dd>
    </dl>
   </div>
@@ -759,31 +741,22 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="hasSnippet">
   <h3>has snippet<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#hasSnippet</p>
+  <div class="comment">
+   <span class="markdown">Connects a monitoring record to its textual summary (a snippet).</span>
+  </div>
   <div class="description">
    <dl>
-    <dt>
-     has super-properties
-    </dt>
-    <dd>
-     <a href="http://purl.org/dc/terms/description" target="_blank" title="http://purl.org/dc/terms/description">description</a> <sup class="type-dp" title="data property">dp</sup>
-    </dd>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring record</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
      <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#hasSnippet">named individual</a>
     </dd>
    </dl>
   </div>
@@ -791,13 +764,16 @@ This section provides details for each class and property defined by Dataout Ont
  <div class="entity" id="monitoredIncidentYear">
   <h3>monitored incident year<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#monitoredIncidentYear</p>
+  <div class="comment">
+   <span class="markdown">We categorise monitored incidents by year, during which they occured. This property represents years of incidents.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring record</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -805,18 +781,15 @@ This section provides details for each class and property defined by Dataout Ont
     <dd>
      <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
     </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#monitoredIncidentYear">named individual</a>
-    </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="monitoringRecordNumber">
-  <h3>Monitoring record number<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>monitoring record number<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#monitoringRecordNumber</p>
+  <div class="comment">
+   <span class="markdown">A unique identifier assigned to a monitoring record within the Dataout monitoring system.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -829,7 +802,7 @@ This section provides details for each class and property defined by Dataout Ont
      has domain
     </dt>
     <dd>
-     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring record</a> <sup class="type-c" title="class">c</sup>
+     <a href="#MonitoringRecord" title="https://dataout.org/ontology#MonitoringRecord">Monitoring Record</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -837,18 +810,15 @@ This section provides details for each class and property defined by Dataout Ont
     <dd>
      <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
     </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#monitoringRecordNumber">named individual</a>
-    </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="uniqueCourtDocumentID">
   <h3>unique court document ID<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://dataout.org/ontology#uniqueCourtDocumentID</p>
+  <div class="comment">
+   <span class="markdown">Unique court document ID assigned by court.</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -868,12 +838,6 @@ This section provides details for each class and property defined by Dataout Ont
     </dt>
     <dd>
      <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
-    </dd>
-    <dt>
-     is also defined as
-    </dt>
-    <dd>
-     <a href="#uniqueCourtDocumentID">named individual</a>
     </dd>
    </dl>
   </div>
@@ -896,22 +860,6 @@ This section provides details for each class and property defined by Dataout Ont
 <span class="markdown">
 Add your references here. It is recommended to have them as a list.</span>
 
-</div>
-   
-
-<!--CHANGELOG SECTION-->
-   <div id="changelog"><div id="changelog">
-<h2 id="changes" class="list">Changes from last version</h2>
-<h3 id="changeDataProp" class="list">Data Properties</h3>
-<details><summary><u>Added data properties</u></summary>
-<ul><li><a href="#courtCode">https://dataout.org/ontology#courtCode</a>
-<ul>
-<li>Added: Range http://www.w3.org/2000/01/rdf-schema#Literal</li>
-<li>Added: Domain https://dataout.org/ontology#Court</li>
-<li>Added: SubProperty of http://purl.org/dc/terms/identifier</li>
-</ul>
-</li>
-</ul></details></div>
 </div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

@@ -1,0 +1,683 @@
+@prefix : <https://dataout.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://dataout.org/ontology#> .
+
+<https://dataout.org/ontology#> rdf:type owl:Ontology ;
+                                 owl:versionIRI <https://raw.githubusercontent.com/dataout-org/ontology/v1.0.0/ontology.ttl> ;
+                                 <http://purl.org/dc/terms/created> "2026-07-16"^^xsd:date ;
+                                 <http://purl.org/dc/terms/creator> <https://dataout.org/> ;
+                                 <http://purl.org/dc/terms/description> "This ontology is intended to represent data on SOGIESC-based crimes and discrimination, as well as processes associated with the collection of such data. The idea behind the Dataout Ontology is to represent instances of human rights violations as phenomena that may be observed in different sources, such as court cases or mass-media publications. There are two main components: the provenance information of an incident and its content. Each observed incident is modelled as an instance of Monitoring Record, resulting from Monitoring Activity. A monitoring record connects to the content and metadata of an incident. There are also controlled vocabularies intended for categorising instances. This ontology introduces custom classes and properties and reuses the PROV Ontology, Schema.org, and DCMI Metadata Terms."@en ;
+                                 <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                 <http://purl.org/ontology/bibo/doi> "10.5281/zenodo.21393602" ;
+                                 <http://purl.org/vocab/vann/preferredNamespacePrefix> "dataout"@en ;
+                                 <http://purl.org/vocab/vann/preferredNamespaceUri> <https://dataout.org/ontology#> ;
+                                 rdfs:label "Dataout Ontology"@en ;
+                                 owl:versionInfo "1.0.0"@en ;
+                                 <https://schema.org/image> <https://github.com/dataout-org/ontology/blob/main/ontology_scheme.png?raw=true> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+<http://www.w3.org/2004/02/skos/core#closeMatch> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+<http://www.w3.org/2004/02/skos/core#exactMatch> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+<http://www.w3.org/2004/02/skos/core#narrower> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#relatedMatch
+<http://www.w3.org/2004/02/skos/core#relatedMatch> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/address
+<https://schema.org/address> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/alternateName
+<https://schema.org/alternateName> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/description
+<https://schema.org/description> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/email
+<https://schema.org/email> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/image
+<https://schema.org/image> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/legalName
+<https://schema.org/legalName> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/name
+<https://schema.org/name> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/url
+<https://schema.org/url> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://dataout.org/ontology#concernsLegalArticle
+:concernsLegalArticle rdf:type owl:ObjectProperty ;
+                      rdfs:domain :MonitoringRecord ;
+                      rdfs:range <https://schema.org/Legislation> ;
+                      rdfs:comment "Connect a monitoring record to a legal article. Useful when monitoring state persecution."@en ;
+                      rdfs:label "concerns legal article"@en .
+
+
+###  https://dataout.org/ontology#defendantCategory
+:defendantCategory rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Defendant ;
+                   rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                   rdfs:comment "Connects a defendant to its category."@en ;
+                   rdfs:label "defendant category"@en .
+
+
+###  https://dataout.org/ontology#hasDefendant
+:hasDefendant rdf:type owl:ObjectProperty ;
+              rdfs:domain :MonitoringRecord ;
+              rdfs:range :Defendant ;
+              rdfs:comment "A natural person or legal entity, which is referred to as a defendant in a source documents (for example, a court decision or a mass media publication)."@en ;
+              rdfs:label "has defendant"@en .
+
+
+###  https://dataout.org/ontology#hasPenalty
+:hasPenalty rdf:type owl:ObjectProperty ;
+            rdfs:domain :MonitoringRecord ;
+            rdfs:range :Penalty ;
+            rdfs:comment "Connects a penalty imposed on a defendant by an official body (a court) to a monitoring record, in which it was mentioned."@en ;
+            rdfs:label "has penalty"@en .
+
+
+###  https://dataout.org/ontology#hasTriggerObject
+:hasTriggerObject rdf:type owl:ObjectProperty ;
+                  rdfs:domain :MonitoringRecord ;
+                  rdfs:range :TriggerObject ;
+                  rdfs:comment "Connects a trigger object to a monitoring record, in which it was mentioned."@en ;
+                  rdfs:label "has trigger object"@en .
+
+
+###  https://dataout.org/ontology#mentionedIn
+:mentionedIn rdf:type owl:ObjectProperty ;
+             rdfs:domain :MonitoringRecord ;
+             rdfs:range :Source ;
+             rdfs:comment "Used to connect a monitoring record to a source that mentions some information about a monitoring record."@en ;
+             rdfs:label "mentioned in"@en .
+
+
+###  https://dataout.org/ontology#monitoringCategory
+:monitoringCategory rdf:type owl:ObjectProperty ;
+                    rdfs:domain :MonitoringActivity ;
+                    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                    rdfs:comment "Connects a monitoring activity to its category."@en ;
+                    rdfs:label "category of monitoring"@en .
+
+
+###  https://dataout.org/ontology#penaltyCategory
+:penaltyCategory rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Penalty ;
+                 rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                 rdfs:comment "Connects a penalty to its category."@en ;
+                 rdfs:label "penalty category"@en .
+
+
+###  https://dataout.org/ontology#penaltyValue
+:penaltyValue rdf:type owl:ObjectProperty ;
+              rdfs:domain :Penalty ;
+              rdfs:range <https://schema.org/StructuredValue> ;
+              rdfs:comment "Connects a penalty to its value. The value of this property can be a triple, which indicates its quantitative unit (such as a monetary amount or days) and amount. For example, a penalty value could be a quantitative unit of 10 days if the penalty category is detention."@en ;
+              rdfs:label "penalty value"@en .
+
+
+###  https://dataout.org/ontology#sourceCategory
+:sourceCategory rdf:type owl:ObjectProperty ;
+                rdfs:domain :Source ;
+                rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                rdfs:comment "Connects a source to its category."@en ;
+                rdfs:label "source category"@en .
+
+
+###  https://dataout.org/ontology#triggerObjectCategory
+:triggerObjectCategory rdf:type owl:ObjectProperty ;
+                       rdfs:domain :TriggerObject ;
+                       rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                       rdfs:comment "Categories of trigger objects describe what such object is (for example, a film, a social media post, a protest), but not its legal interpretation by authorities."@en ;
+                       rdfs:label "trigger object category"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty .
+
+
+###  https://dataout.org/ontology#courtCode
+:courtCode rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/terms/identifier> ;
+           rdfs:domain :Court ;
+           rdfs:range rdfs:Literal ;
+           rdfs:comment "An identifier code assigned to a court by a judicial or administrative authority."@en ;
+           rdfs:label "court code"@en .
+
+
+###  https://dataout.org/ontology#courtDocumentDate
+:courtDocumentDate rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                   rdfs:domain :Source ;
+                   rdfs:range rdfs:Literal ;
+                   rdfs:comment "Indicates a date stated on a court document."@en ;
+                   rdfs:label "court document date"@en .
+
+
+###  https://dataout.org/ontology#courtDocumentNumber
+:courtDocumentNumber rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf <http://purl.org/dc/terms/identifier> ;
+                     rdfs:domain :Source ;
+                     rdfs:range rdfs:Literal ;
+                     rdfs:comment "Used to indicate a number of a court document assigned by court. It is not necessarily a unique identifier. To indicate unique identifiers, use uniqueCourtDocumentID."@en ;
+                     rdfs:label "court document number"@en .
+
+
+###  https://dataout.org/ontology#hasSnippet
+:hasSnippet rdf:type owl:DatatypeProperty ;
+            rdfs:domain :MonitoringRecord ;
+            rdfs:range rdfs:Literal ;
+            rdfs:comment "Connects a monitoring record to its textual summary (a snippet)."@en ;
+            rdfs:label "has snippet"@en .
+
+
+###  https://dataout.org/ontology#monitoredIncidentYear
+:monitoredIncidentYear rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :MonitoringRecord ;
+                       rdfs:range rdfs:Literal ;
+                       rdfs:comment "We categorise monitored incidents by year, during which they occured. This property represents years of incidents."@en ;
+                       rdfs:label "monitored incident year"@en .
+
+
+###  https://dataout.org/ontology#monitoringRecordNumber
+:monitoringRecordNumber rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf <http://purl.org/dc/terms/identifier> ;
+                        rdfs:domain :MonitoringRecord ;
+                        rdfs:range rdfs:Literal ;
+                        rdfs:comment "A unique identifier assigned to a monitoring record within the Dataout monitoring system."@en ;
+                        rdfs:label "monitoring record number"@en .
+
+
+###  https://dataout.org/ontology#uniqueCourtDocumentID
+:uniqueCourtDocumentID rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf <http://purl.org/dc/terms/identifier> ;
+                       rdfs:domain :Source ;
+                       rdfs:range rdfs:Literal ;
+                       rdfs:comment "Unique court document ID assigned by court."@en ;
+                       rdfs:label "unique court document ID"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> rdf:type owl:Class .
+
+
+###  https://dataout.org/ontology#Court
+:Court rdf:type owl:Class ;
+       rdfs:subClassOf <https://schema.org/Organization> ;
+       rdfs:comment "Class representing a court of any level."@en ;
+       rdfs:label "Court"@en .
+
+
+###  https://dataout.org/ontology#Defendant
+:Defendant rdf:type owl:Class ;
+           rdfs:comment "A legal or natural person with a role of a defendant in a legal process."@en ;
+           rdfs:label "Defendant"@en .
+
+
+###  https://dataout.org/ontology#MonitoringActivity
+:MonitoringActivity rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                    rdfs:comment "Class representing a single monitoring activity. Dataout conducts monitorings of different categories, such as hate crimes, discrimination, administrative and criminal persecution. The categories of monitoring are defined by the MonitoringCategoryScheme."@en ;
+                    rdfs:label "Monitoring Activity"@en .
+
+
+###  https://dataout.org/ontology#MonitoringRecord
+:MonitoringRecord rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                  rdfs:comment "A single record resulting from a monitoring activity. For example, if a monitoring activity documents hate crime incidents, an entity representing a hate crime would be a monitoring record."@en ;
+                  rdfs:label "Monitoring Record"@en .
+
+
+###  https://dataout.org/ontology#Penalty
+:Penalty rdf:type owl:Class ;
+         rdfs:comment "Penalty imposed by an official body, such as a court."@en ;
+         rdfs:label "Penalty"@en .
+
+
+###  https://dataout.org/ontology#Source
+:Source rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+        rdfs:comment "A source of a monitoring record indicating provenance information."@en ;
+        rdfs:label "Source"@en .
+
+
+###  https://dataout.org/ontology#TriggerObject
+:TriggerObject rdf:type owl:Class ;
+               rdfs:comment "A trigger object is an information object or public action that was used by the authorities as a reason to initiate an administrative or criminal proceeding. For example, in our monitoring of administrative persecution targeting LGBTQIA+ expression in Russia, a trigger object could be a mass media publication, which the Russian mass media regulator (Roskomnadzor) found to be violating, which resulted in a court case against a media company dissimianting such publication."@en ;
+               rdfs:label "Trigger Object"@en .
+
+
+###  https://schema.org/Legislation
+<https://schema.org/Legislation> rdf:type owl:Class .
+
+
+###  https://schema.org/NGO
+<https://schema.org/NGO> rdf:type owl:Class .
+
+
+###  https://schema.org/Organization
+<https://schema.org/Organization> rdf:type owl:Class .
+
+
+###  https://schema.org/StructuredValue
+<https://schema.org/StructuredValue> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://dataout.org/
+<https://dataout.org/> rdf:type owl:NamedIndividual ,
+                                <http://www.w3.org/ns/prov#Organization> ,
+                                <https://schema.org/NGO> ;
+                       <https://schema.org/address> "The Hague, the Netherlands"@en ;
+                       <https://schema.org/alternateName> "Dataout"@en ;
+                       <https://schema.org/description> "Dataout is a nonprofit dedicated to uncovering discrimination and crimes based on SOGIESC – sexual orientation, gender identity & expression, and sex characteristics. By conducting research and releasing open data, we aim to empower journalists, researchers, human rights advocates, and policymakers in creating a better social and legal environment for LGBTQIA+ people and others affected by SOGIESC-based discrimination. We focus on the regions where these issues are severe and least visible."@en ;
+                       <https://schema.org/email> <mailto:contact@dataout.org> ;
+                       <https://schema.org/legalName> "Dataout Foundation"@en ,
+                                                      "Stichting Dataout"@nl ;
+                       <https://schema.org/name> "Dataout Foundation"@en ;
+                       <https://schema.org/url> <https://dataout.org/> .
+
+
+###  https://dataout.org/ontology#DefendantCategoryScheme
+:DefendantCategoryScheme rdf:type owl:NamedIndividual ,
+                                  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Defendant Categories"@en .
+
+
+###  https://dataout.org/ontology#LegislationCategoryScheme
+:LegislationCategoryScheme rdf:type owl:NamedIndividual ,
+                                    <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Legislation Categories"@en .
+
+
+###  https://dataout.org/ontology#MonitoringCategoryScheme
+:MonitoringCategoryScheme rdf:type owl:NamedIndividual ,
+                                   <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Monitoring Categories"@en .
+
+
+###  https://dataout.org/ontology#PenaltyCategoryScheme
+:PenaltyCategoryScheme rdf:type owl:NamedIndividual ,
+                                <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Penalty Categories"@en .
+
+
+###  https://dataout.org/ontology#SourceCategoryScheme
+:SourceCategoryScheme rdf:type owl:NamedIndividual ,
+                               <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Source Categories"@en .
+
+
+###  https://dataout.org/ontology#TriggerObjectCategoryScheme
+:TriggerObjectCategoryScheme rdf:type owl:NamedIndividual ,
+                                      <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                             <http://www.w3.org/2004/02/skos/core#note> "Categories of objects that triggered administrative or criminal proceedings"@en ;
+                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Trigger Object Categories"@en .
+
+
+###  https://dataout.org/ontology#administrativeCode
+:administrativeCode rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/2004/02/skos/core#Concept> ;
+                    <http://www.w3.org/2004/02/skos/core#inScheme> :LegislationCategoryScheme ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Administrative Code"@en .
+
+
+###  https://dataout.org/ontology#administrativePersecution
+:administrativePersecution rdf:type owl:NamedIndividual ,
+                                    <http://www.w3.org/2004/02/skos/core#Concept> ;
+                           <http://www.w3.org/2004/02/skos/core#inScheme> :MonitoringCategoryScheme ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Administrative persecution"@en .
+
+
+###  https://dataout.org/ontology#book
+:book rdf:type owl:NamedIndividual ,
+               <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/Book> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+      <http://www.w3.org/2004/02/skos/core#narrower> :comicBook ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Book"@en .
+
+
+###  https://dataout.org/ontology#comicBook
+:comicBook rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/2004/02/skos/core#Concept> ;
+           <http://www.w3.org/2004/02/skos/core#broader> :book ;
+           <http://www.w3.org/2004/02/skos/core#exactMatch> <https://www.wikidata.org/wiki/Q1760610> ;
+           <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Comics"@en .
+
+
+###  https://dataout.org/ontology#constitution
+:constitution rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/2004/02/skos/core#Concept> ;
+              <http://www.w3.org/2004/02/skos/core#inScheme> :LegislationCategoryScheme ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Constitution"@en .
+
+
+###  https://dataout.org/ontology#courtDocument
+:courtDocument rdf:type owl:NamedIndividual ,
+                        <http://www.w3.org/2004/02/skos/core#Concept> ;
+               <http://www.w3.org/2004/02/skos/core#inScheme> :SourceCategoryScheme ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Court document"@en ;
+               <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://www.wikidata.org/wiki/Q2334719> .
+
+
+###  https://dataout.org/ontology#criminalCode
+:criminalCode rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/2004/02/skos/core#Concept> ;
+              <http://www.w3.org/2004/02/skos/core#inScheme> :LegislationCategoryScheme ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Criminal Code"@en .
+
+
+###  https://dataout.org/ontology#criminalPersecution
+:criminalPersecution rdf:type owl:NamedIndividual ,
+                              <http://www.w3.org/2004/02/skos/core#Concept> ;
+                     <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q80111632> ;
+                     <http://www.w3.org/2004/02/skos/core#inScheme> :MonitoringCategoryScheme ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Criminal persecution"@en .
+
+
+###  https://dataout.org/ontology#datingProfile
+:datingProfile rdf:type owl:NamedIndividual ,
+                        <http://www.w3.org/2004/02/skos/core#Concept> ;
+               <http://www.w3.org/2004/02/skos/core#broader> :webContent ;
+               <http://www.w3.org/2004/02/skos/core#exactMatch> <https://www.wikidata.org/wiki/Q128802099> ;
+               <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Dating profile"@en .
+
+
+###  https://dataout.org/ontology#detention
+:detention rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/2004/02/skos/core#Concept> ;
+           <http://www.w3.org/2004/02/skos/core#inScheme> :PenaltyCategoryScheme ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Detention"@en .
+
+
+###  https://dataout.org/ontology#expulsion
+:expulsion rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/2004/02/skos/core#Concept> ;
+           <http://www.w3.org/2004/02/skos/core#inScheme> :PenaltyCategoryScheme ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Expulsion"@en .
+
+
+###  https://dataout.org/ontology#federalLaw
+:federalLaw rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+            <http://www.w3.org/2004/02/skos/core#inScheme> :LegislationCategoryScheme ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Federal law"@en .
+
+
+###  https://dataout.org/ontology#film
+:film rdf:type owl:NamedIndividual ,
+               <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/Movie> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Film"@en .
+
+
+###  https://dataout.org/ontology#fine
+:fine rdf:type owl:NamedIndividual ,
+               <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> :PenaltyCategoryScheme ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Fine"@en .
+
+
+###  https://dataout.org/ontology#hateCrimes
+:hateCrimes rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q459409> ;
+            <http://www.w3.org/2004/02/skos/core#inScheme> :MonitoringCategoryScheme ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Hate crimes"@en .
+
+
+###  https://dataout.org/ontology#individual
+:individual rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Person> ,
+                                                             <https://www.wikidata.org/wiki/Q795052> ;
+            <http://www.w3.org/2004/02/skos/core#inScheme> :DefendantCategoryScheme ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Individual"@en .
+
+
+###  https://dataout.org/ontology#legalEntity
+:legalEntity rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/2004/02/skos/core#Concept> ;
+             <http://www.w3.org/2004/02/skos/core#inScheme> :DefendantCategoryScheme ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Legal entity"@en ;
+             <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://schema.org/Organization> ,
+                                                                <https://www.wikidata.org/wiki/Q3778211> .
+
+
+###  https://dataout.org/ontology#massMediaPublication
+:massMediaPublication rdf:type owl:NamedIndividual ,
+                               <http://www.w3.org/2004/02/skos/core#Concept> ;
+                      <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/NewsArticle> ,
+                                                                       <https://www.wikidata.org/wiki/Q5707594> ;
+                      <http://www.w3.org/2004/02/skos/core#inScheme> :SourceCategoryScheme ,
+                                                                     :TriggerObjectCategoryScheme ;
+                      <http://www.w3.org/2004/02/skos/core#note> "Used both as a source category and trigger object category"@en ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Mass media publication"@en .
+
+
+###  https://dataout.org/ontology#merchandise
+:merchandise rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/2004/02/skos/core#Concept> ;
+             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/Product> ,
+                                                              <https://www.wikidata.org/wiki/Q2424752> ;
+             <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+             <http://www.w3.org/2004/02/skos/core#note> "Used to categorise products and items"@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Merchandise"@en .
+
+
+###  https://dataout.org/ontology#musicVideo
+:musicVideo rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/MusicVideoObject> ;
+            <http://www.w3.org/2004/02/skos/core#exactMatch> <https://www.wikidata.org/wiki/Q193977> ;
+            <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Music video"@en .
+
+
+###  https://dataout.org/ontology#official
+:official rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/2004/02/skos/core#Concept> ;
+          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q599151> ;
+          <http://www.w3.org/2004/02/skos/core#inScheme> :DefendantCategoryScheme ;
+          <http://www.w3.org/2004/02/skos/core#note> "used in a legal context."@en ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "Official"@en .
+
+
+###  https://dataout.org/ontology#pressRelease
+:pressRelease rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/2004/02/skos/core#Concept> ;
+              <http://www.w3.org/2004/02/skos/core#exactMatch> <https://www.wikidata.org/wiki/Q207184> ;
+              <http://www.w3.org/2004/02/skos/core#inScheme> :SourceCategoryScheme ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Press release"@en .
+
+
+###  https://dataout.org/ontology#protest
+:protest rdf:type owl:NamedIndividual ,
+                  <http://www.w3.org/2004/02/skos/core#Concept> ;
+         <http://www.w3.org/2004/02/skos/core#broader> :publicAction ;
+         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://www.wikidata.org/wiki/Q273120> ;
+         <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "Protest"@en .
+
+
+###  https://dataout.org/ontology#publicAction
+:publicAction rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/2004/02/skos/core#Concept> ;
+              <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+              <http://www.w3.org/2004/02/skos/core#narrower> :protest ,
+                                                             :queerVenue ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Public action"@en .
+
+
+###  https://dataout.org/ontology#queerVenue
+:queerVenue rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :publicAction ;
+            <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+            <http://www.w3.org/2004/02/skos/core#note> "We introduced this category to indicate cases of persecution against legal and natural persons associated with queer venues. In such cases, there is usually not a single trigger object indicated, but the fact that a venue is intended for LGBTQIA+ people serves as a trigger. This category can be seen as a subcategory of a public action. Note that this category does not indicate a (type of) physical place."@en ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Queer venue"@en ;
+            <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://www.wikidata.org/wiki/Q64364539> .
+
+
+###  https://dataout.org/ontology#socialMediaPost
+:socialMediaPost rdf:type owl:NamedIndividual ,
+                          <http://www.w3.org/2004/02/skos/core#Concept> ;
+                 <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/SocialMediaPosting> ;
+                 <http://www.w3.org/2004/02/skos/core#inScheme> :SourceCategoryScheme ,
+                                                                :TriggerObjectCategoryScheme ;
+                 <http://www.w3.org/2004/02/skos/core#note> "Used both as a source category and trigger object category"@en ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Social media post"@en .
+
+
+###  https://dataout.org/ontology#tvProgramme
+:tvProgramme rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/2004/02/skos/core#Concept> ;
+             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://schema.org/BroadcastEvent> ;
+             <http://www.w3.org/2004/02/skos/core#exactMatch> <https://www.wikidata.org/wiki/Q15416> ;
+             <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "TV programme"@en .
+
+
+###  https://dataout.org/ontology#tvSeries
+:tvSeries rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/2004/02/skos/core#Concept> ;
+          <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/TVSeries> ;
+          <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "TV series"@en .
+
+
+###  https://dataout.org/ontology#warning
+:warning rdf:type owl:NamedIndividual ,
+                  <http://www.w3.org/2004/02/skos/core#Concept> ;
+         <http://www.w3.org/2004/02/skos/core#inScheme> :PenaltyCategoryScheme ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "Warning"@en .
+
+
+###  https://dataout.org/ontology#webContent
+:webContent rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+            <http://www.w3.org/2004/02/skos/core#exactMatch> <https://schema.org/WebContent> ;
+            <http://www.w3.org/2004/02/skos/core#inScheme> :TriggerObjectCategoryScheme ;
+            <http://www.w3.org/2004/02/skos/core#narrower> :datingProfile ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Web content"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
